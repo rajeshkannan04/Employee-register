@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('DOB');
             $table->string('address');
-            $table->integer('mobile');
+            $table->bigInteger('mobile');
             $table->string('email');
             $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
             $table->foreignId('designation_id')->constrained('designations')->onDelete('cascade');

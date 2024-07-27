@@ -6,6 +6,17 @@
     <title>Department Form</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card{
+            border: 2px solid gray;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .form-control{
+            border: none;
+            border-bottom: 2px solid gray;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -13,18 +24,18 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">Create Department</h5>
+                        <h4 class="card-title text-center">Create Department</h4>
                     </div>
                     <div class="card-body">
                         <form action="/submit_form" method="POST">
                             @csrf
-                            <div class="form-group">
-                                <label for="name">Department-Name</label>
+                            <div class="form-group fw-bold">
+                                <label for="name">Department-Name <span class="text-danger fw-bolder">*</span></label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                                <label for="description">Description <span class="text-danger fw-bolder">*</span></label>
+                                <input type="text" class="form-control" id="description" name="description" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

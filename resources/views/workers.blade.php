@@ -53,6 +53,7 @@
   </div>
 </nav>
 
+
 <header class="container text-center mt-5">
   <h1>Welcome to Workers Website!</h1>
   <p>An employee, often referred to as a staff member, worker, or personnel, is an individual who is hired by an employer to perform specific duties and responsibilities within an organization or company. Employees are typically compensated for their work through wages or salaries, and they may receive additional benefits such as health insurance, retirement plans, and paid time off.</p>
@@ -75,7 +76,7 @@
 
 </header>
 
-<footer class="bg-dark text-white py-4">
+<footer class="bg-dark text-white py-4 text-center">
   <div class="container">
     <div class="row">
       <div class="col-md-4">

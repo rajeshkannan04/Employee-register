@@ -1,13 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
 
 
 Route::get('/', function () {
-    return view('workers');
+    return view('signin');
+});
+Route::get('/signup', function () {
+    return view('signup');
 });
 
 Route::middleware([
@@ -20,6 +24,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/worker', function () {
+    return view('workers');
+});
+Route::post('/login', [UserController::class, 'login']);
+Route::post('/register', [UserController::class, 'store']);
 
 Route::get('/addemployee', [EmployeeController::class, 'index']);
 Route::get('/employee', [EmployeeController::class, 'show']);

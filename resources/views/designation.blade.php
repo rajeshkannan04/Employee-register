@@ -7,6 +7,17 @@
     <title>Designation Form</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card{
+            border: 2px solid gray;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .form-control{
+            border: none;
+            border-bottom: 2px solid gray;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,11 +32,11 @@
                         <form action="/subdesignation" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name">Name <span class="text-danger fw-bolder">*</span></label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="department_id">Department</label>
+                                <label for="department_id">Department <span class="text-danger fw-bolder">*</span></label>
                                 <select class="form-control" id="department_id" name="department_id" required>
                                     @foreach($department as $data)
                                     <option value="{{$data->id}}">{{$data->name}}</option>
@@ -33,7 +44,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="description">Description</label>
+                                <label for="description">Description <span class="text-danger fw-bolder">*</span></label>
                                 <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -74,7 +74,7 @@ class EmployeeController extends Controller
         $data = Employee_table::find($id);
         $department = Department::get();
         $designation = Designation::get();
-        return view('updateemployee', compact('department','designation','data'));
+        return view('updateEmployee', compact('department','designation','data'));
     }
 
     /**
